@@ -1,0 +1,377 @@
+/* 
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+> 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens.
+
+## Colors
+
+### Primary
+
+- Blue 950: hsl(213, 96%, 18%)
+- Purple 600: hsl(243, 100%, 62%)
+- Blue 300: hsl(228, 100%, 84%)
+- Blue 200: hsl(206, 94%, 87%)
+- Red 500: hsl(354, 84%, 57%)
+
+### Neutral
+
+- Grey 500: hsl(231, 11%, 63%)
+- Purple 200: hsl(229, 24%, 87%)
+- Blue 100: hsl(218, 100%, 97%)
+- Blue 50: hsl(231, 100%, 99%)
+- White: hsl(0, 100%, 100%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraph): 16px
+
+### Font
+
+- Family: [Ubuntu](https://fonts.google.com/specimen/Ubuntu)
+- Weights: 400, 500, 700
+
+> 💎 [Upgrade to Pro](https://www.frontendmentor.io/pro?ref=style-guide) for design file access to see all design details and get hands-on experience using a professional workflow with tools like Figma.
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* * ### Primary */
+  --Blue-950: hsl(213, 96%, 18%);
+  --Purple-600: hsl(243, 100%, 62%);
+  --Blue-300: hsl(228, 100%, 84%);
+  --Blue-200: hsl(206, 94%, 87%);
+  --Red-500: hsl(354, 84%, 57%);
+  /* ~ ### Neutral */
+  --Grey-500: hsl(231, 11%, 63%);
+  --Purple-200: hsl(229, 24%, 87%);
+  --Blue-100: hsl(218, 100%, 97%);
+  --Blue-50: hsl(231, 100%, 99%);
+  --White: hsl(0, 100%, 100%);
+}
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  background-color: var(--Blue-100);
+}
+.container {
+  max-width: 85%;
+  margin: 0 auto;
+  padding: 16px;
+}
+.main {
+  position: relative;
+}
+.main-image {
+  width: 100%;
+  display: block;
+}
+.step-title {
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--Blue-950);
+}
+.step-description {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--Grey-500);
+  margin: 8px 0 24px 0;
+}
+label {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--Blue-950);
+}
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--Purple-200);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--Blue-950);
+}
+input::placeholder {
+  color: var(--Purple-200);
+  font-weight: 300;
+  font-size: 18px;
+}
+input:focus {
+  outline: 2px solid var(--Purple-600);
+  border: none;
+}
+.step {
+  background: var(--White);
+  padding: 24px 16px 24px 16px;
+  position: absolute;
+  width: 100%;
+  top: -60%;
+  left: 50%;
+  transform: translate(-49%, -22%);
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+button {
+  padding: 16px;
+  background-color: var(--Blue-950);
+  color: var(--White);
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  margin: 16px;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: var(--Blue-50);
+}
+.numbers {
+  display: flex;
+  gap: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--Purple-200);
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+.numbers .active {
+  background-color: var(--Blue-200);
+  color: #000;
+}
+.numbers div {
+  border: 1px solid var(--Purple-200);
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 50%;
+}
+.btn {
+  background-color: transparent;
+  color: var(--Grey-500);
+}
+.btn:hover {
+  color: var(--Blue-950);
+  transition: color 0.3s;
+}
+.btn-main:hover {
+  background-color: var(--Blue-300);
+  color: var(--Blue-950);
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+}
+#toggle-billing {
+  margin-top: 24px;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 50px;
+  height: 25px;
+  border: 2px solid var(--Purple-200);
+  border-radius: 15px;
+  position: relative;
+}
+#toggle-billing::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 21px;
+  height: 21px;
+  background-color: var(--Purple-200);
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+#toggle-billing:checked::before {
+  transform: translateX(25px);
+  background-color: var(--White);
+}
+#toggle-billing:checked {
+  background-color: var(--Purple-600);
+  border: none;
+}
+.input-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-check p {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--Blue-950);
+  margin: 20px 12px 0 12px;
+}
+.plans {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 8px;
+}
+.plans button {
+  flex: 1;
+  border: 1px solid var(--Purple-200);
+  background-color: var(--Blue-50);
+  color: var(--Blue-950);
+  margin: 0;
+}
+
+.plans button:hover {
+  border: 2px solid var(--Purple-600);
+  transition: border 0.3s;
+}
+.step-description-2 {
+  font-weight: 500;
+  color: var(--Grey-500);
+  font-size: 20px;
+}
+.plan {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.div-addon {
+  display: flex;
+  justify-content: space-between;
+  align-items: centers;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid var(--Purple-200);
+}
+.div-addon input {
+  width: auto;
+  margin-right: 8px;
+}
+.div-addon span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--Blue-950);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.div-addon input:focus {
+  outline: 0;
+}
+.div-addon:has(input:checked) {
+  border: 2px solid var(--Purple-600);
+}
+.div-addon .addon-price {
+  margin-top: 0;
+  color: var(--Purple-600);
+  font-weight: 700;
+  font-size: 14px;
+}
+.summary {
+  list-style: none;
+  border-bottom: 1px solid var(--Purple-200);
+  margin-top: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: var(--Blue-100);
+  li {
+    padding-bottom: 5px;
+  }
+}
+.main-li-div {
+  display: flex;
+  flex-direction: column;
+}
+.main-li {
+  display: flex;
+  justify-content: space-between;
+}
+.addons-list {
+  margin-top: 25px;
+  list-style: none;
+}
+.addon-item {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.price {
+  color: var(--Blue-300);
+  font-weight: 300;
+}
+.plan-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+  transition: all 0.3s ease;
+}
+.plan-info span {
+  font-size: 12px;
+  color: var(--Purple-600);
+  font-weight: 700;
+}
+.thank-you {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  padding: 50px 20px;
+}
+.thank-you h2 {
+  font-size: 24px;
+  color: var(--Blue-950);
+}
+.thank-you p {
+  text-align: center;
+  font-size: 16px;
+  color: var(--Grey-500);
+  max-width: 400px;
+  line-height: 1.5;
+}
+.main-image-desktop {
+  display: none;
+}
+.num-desc {
+  display: none;
+}
+.addon-desc {
+  font-size: 12px !important;
+  color: var(--Grey-500) !important;
+  font-weight: 400 !important;
+}
+
+.error-message {
+  font-size: 12px;
+  color: var(--Red-500);
+  margin-top: 4px;
+  display: block;
+}
